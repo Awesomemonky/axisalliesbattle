@@ -1,18 +1,11 @@
-import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class Tests {
 
     @Test
-    fun `Dice returns 1`() {
- 	val result = Dice().throws()
-        assertEquals(1,result)
-	}
-
-    @Test
     fun `When dice thrown 100 times then all numbers 1,2,3,4,5 or 6 appear`() {
-        var collectedResults:MutableList<Int> = mutableListOf()
+        val collectedResults:MutableList<Int> = mutableListOf()
         for (i in 1..100) {
             val result = Dice().throws()
             collectedResults.add(result)
@@ -31,7 +24,8 @@ class Tests {
             val result = Dice().throws()
             val valueGreaterThatZero = result > 0
             val valueLessThanSeven = result < 7
-            assertTrue(valueGreaterThatZero && valueLessThanSeven, "Got: $result")
+            assertTrue(valueGreaterThatZero)
+            assertTrue(valueLessThanSeven)
         }
     }
 
