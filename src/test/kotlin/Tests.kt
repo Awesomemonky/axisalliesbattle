@@ -29,4 +29,22 @@ class Tests {
         }
     }
 
+    @Test
+    fun `Infantry can be added to the battlestrip as attackers`() {
+        val battleStrip = BattleStrip()
+        val attacker = Infantry()
+        battleStrip.addAttacker(attacker)
+        val attackers: List<Infantry> = battleStrip.attackers()
+        assertTrue(attackers.contains(attacker))
+    }
+
+    @Test
+    fun `Infantry can be added to the battlestrip as defenders`() {
+        val battleStrip = BattleStrip()
+        val defender = Infantry()
+        battleStrip.addDefender(defender)
+        val defenders: List<Infantry> = battleStrip.defenders()
+        assertTrue(defenders.contains(defender))
+    }
+
 }
